@@ -102,11 +102,9 @@ function capitalInp(){
         element.remove();
     });
     data.filter(ele=>{
-        console.log(ele.capital)
         if(ele.capital != undefined && ele.capital[0].toLowerCase().includes(document.querySelector(".capitalInp").value)){
-            console.log(ele.capital);
             document.querySelector(".tdInfo").insertAdjacentHTML("beforeend", `
-            <tr class="countries" data-value='${ele.capital[0]}' onclick="changeView(this)">
+            <tr class="countries" data-value='${ele.name.common}' onclick="changeView(this)">
                 <td class="longA">${ele.name.common}</td>
                 ${(() => {
                     if(ele.languages != undefined){
