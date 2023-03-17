@@ -41,9 +41,6 @@ document.querySelector(".second").insertAdjacentHTML("beforeend", `<div class="c
     <div class="imgs">
         <h2><img src="" class="flag imgs"></img></h1> 
         <h2><img src="" class="coatOfArms imgs"></img></h1>
-        <div class="mapResponsive"> 
-            <h2 class="h2Css">Map: <iframe src="https://www.openstreetmap.org/relation/1311341" class="map"></iframe></h2>
-        </div> 
     </div>
 </div>
 </div>`)

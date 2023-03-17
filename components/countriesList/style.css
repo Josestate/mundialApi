@@ -67,3 +67,24 @@ body{
 .inpCl{
     margin: 10px;
 }
+.tableMobile{
+    display: none;
+}
+@media screen and (max-width: 600px){
+    .tableContent{
+        display: none;
+    }
+    .tableMobile{
+        display: block;
+    }
+    .tableMobileChild{
+        margin: 10px;
+        background: #ffffffab;
+        display: grid;
+        justify-content: center;
+        border: solid white;
+    }
+    .longA{
+        margin: 0;
+    }
+}

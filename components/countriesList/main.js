@@ -5,19 +5,21 @@ document.querySelector(".first").insertAdjacentHTML("beforeend", `
 <div class="header">
     <h1 class="h1css" >Welcome to my world</h1>
     <input type="text" placeholder="Region" data-region="region" data-all="all" class="regionInp inpCl" onkeyup="region()">
-    <input type="text" placeholder="Countrie" data-value="country" class="countryInp inpCl" onkeyup="countryInp()">
+    <input type="text" placeholder="Countr" data-value="country" class="countryInp inpCl" onkeyup="countryInp()">
     <input type="text" placeholder="Capital" data-value="capital" class="capitalInp inpCl" onkeyup="capitalInp()">
 </div>
 <table class="tableContent">
     <thead class="headerCont">
-            <th>Countrie</th>
-            <th>Language</th>
+            <th>Country</th>
             <th>Capital</th>
-            <th>Sub Region</th>
+            <th>Region</th>
+            <th>Language</th>
     </thead>
     <tbody class="tdInfo">
     </tbody>
 </table>
+<div class="tableMobile">
+</div>
 `);
 
 
@@ -43,14 +45,6 @@ function region(){
             <tr class="countries" data-value='${countri}' onclick="changeView(this)">
                 <td class="longA">${countri}</td>
                 ${(() => {
-                    if(element.languages != undefined){
-                        return `<td class="longA">${Object.entries(element.languages)[0][1]}</td>`;
-                    }
-                    else{
-                        return '';
-                    }
-                })()}
-                ${(() => {
                     if(element.capital != undefined){
                         return `<td class="longA">${element.capital[0]}</td>`;
                     }
@@ -58,10 +52,46 @@ function region(){
                         return '';
                     }
                 })()}
-                <td class="longA">${element.subregion}</td>
+                <td class="longA">${element.region}</td>
+                ${(() => {
+                    if(element.languages != undefined){
+                        return `<td class="longA">${Object.entries(element.languages)[0][1]}</td>`;
+                    }
+                    else{
+                        return '';
+                    }
+                })()}
             </tr>
             `);
-            
+            document.querySelector(".tableMobile").insertAdjacentHTML("beforeend", `
+            <div class="tableMobileChild" data-value='${countri}' onclick="changeView(this)">
+                <h2 class="longA">${countri}</h2>
+                ${(() => {
+                    if(element.capital != undefined){
+                        return `<p class="longA">${element.capital[0]}</p>`;
+                    }
+                    else{
+                        return '';
+                    }
+                })()}
+                ${(() => {
+                    if(element.region != undefined){
+                        return `<p class="longA">${element.region}</p>`;
+                    }
+                    else{
+                        return '';
+                    }
+                })()}
+                ${(() => {
+                    if(element.languages != undefined){
+                        return  `<p class="longA">${Object.entries(element.languages)[0][1]}</p>`;
+                    }
+                    else{
+                        return '';
+                    }
+                })()}
+            </div>    
+            `)
         });
     });
 }

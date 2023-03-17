@@ -62,4 +62,36 @@ html{
     width:100%;
     position:absolute;
 } */
-    
+@media screen and (max-width: 600px){
+    .countrieSpan{
+        font-size: 40px;
+    }
+    .countryContainer{
+        display: flex;
+        flex-flow: column;
+    }
+    .tittlesContainer{
+        order: 1;
+    }
+    .imgsFather{
+        width: 100%;
+        order: 2;
+    }
+    .backBtn{
+        top: -10px;
+    }
+    .countrieInfo{
+        width: 100%;
+        margin-top: 50px;
+        order: 3;
+    }
+    .container{
+        margin-top: 30px;
+    }
+    .imgs{
+        display: inline-flex;
+        width: 100%;
+        height: 60px;
+        justify-content: space-evenly;
+    }
+}
